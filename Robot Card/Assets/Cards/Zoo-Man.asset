@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c858e902239383441b5370ab0d22e621, type: 3}
-  m_Name: Bionicle Bunny
+  m_Name: Zoo-Man
   m_EditorClassIdentifier: 
-  cardName: BIONICLE BUNNY
-  artwork: {fileID: 21300000, guid: 5bb153d6a2cbf2d43b3b4095fc3184d4, type: 3}
-  speed: 6
-  agility: 18
-  experience: 4
-  defence: 15
-  attack: 25
+  cardName: Zoo-Man
+  artwork: {fileID: 21300000, guid: 787452b9dd04de24a9525e2fd6720755, type: 3}
+  speed: 16
+  agility: 12
+  experience: 3
+  defence: 10
+  attack: 15

@@ -7,9 +7,12 @@ using UnityEngine.UI;
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	public Transform parentToReturnTo = null;
-	GameObject placeHolder = null;
+	public GameObject placeHolder = null;
 	public Transform placeholderParent = null;
 	Vector2 offset;
+
+	public enum Player {  PLAYER1, PLAYER2, UNDEFINED};
+	public Player playerNum = Player.UNDEFINED;
 
 	public void OnBeginDrag(PointerEventData eventData)
 	{
@@ -61,5 +64,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 		this.transform.SetSiblingIndex(placeHolder.transform.GetSiblingIndex());
 		GetComponent<CanvasGroup>().blocksRaycasts = true;
 		Destroy(placeHolder);
+	}
+
+	public void UpdateCard(Transform p, int s)
+	{
+		this.transform.SetParent(p);
+		this.transform.SetSiblingIndex(s);
 	}
 }

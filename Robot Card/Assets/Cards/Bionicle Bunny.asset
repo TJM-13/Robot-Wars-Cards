@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c858e902239383441b5370ab0d22e621, type: 3}
+  m_Name: Bionicle Bunny
+  m_EditorClassIdentifier: 
+  cardName: BIONICLE BUN
+  artwork: {fileID: 21300000, guid: d4182d1a90ea51d4bbfcd2190f827c32, type: 3}
+  speed: 6
+  agility: 18
+  experience: 4
+  defence: 15
+  attack: 25

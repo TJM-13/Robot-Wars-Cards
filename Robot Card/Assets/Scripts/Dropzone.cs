@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class Dropzone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler{
 
+	public Draggable.Player playerNum = Draggable.Player.UNDEFINED;
+
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 		//Debug.Log("OnPointerEnter");
@@ -14,7 +16,13 @@ public class Dropzone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 		if (d != null)
 		{
-			d.placeholderParent = this.transform;
+			if (playerNum == d.playerNum)
+			{
+				if (!this.gameObject.tag.Equals("Playzone"))
+				{
+					d.placeholderParent = this.transform;
+				}
+			}
 		}
 	}
 
@@ -38,7 +46,21 @@ public class Dropzone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 		Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 		if (d != null)
 		{
-			d.parentToReturnTo = this.transform;
+			if (playerNum == d.playerNum)
+			{
+				if (this.gameObject.tag.Equals("Playzone"))
+				{
+					if(this.transform.childCount > 0)
+					{
+						this.GetComponentInChildren<Draggable>().UpdateCard(d.parentToReturnTo, d.placeHolder.transform.GetSiblingIndex());
+					}
+					d.parentToReturnTo = this.transform;
+				}
+				else
+				{
+					d.parentToReturnTo = this.transform;
+				}
+			}
 		}
 
 	}
